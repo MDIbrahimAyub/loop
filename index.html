@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Welcome</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Styling for the h2 heading */
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for the input box */
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 50px;
+            margin-left: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            margin-top: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Result message styling */
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Enter a City Name:</h2>
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button onclick="checkCity()">Submit</button>
+    <p id="result"></p>
+
+    <script>
+        const pakistaniCities = ["Karachi", "Lahore", "Islamabad", "Faisalabad", "Rawalpindi", "Multan", "Peshawar", "Quetta"];
+
+        function checkCity() {
+            const userCity = document.getElementById("cityInput").value;
+            const result = document.getElementById("result");
+
+            for (let i = 0; i < pakistaniCities.length; i++) {
+                if (pakistaniCities[i].toLowerCase() === userCity.toLowerCase()) {
+                    result.textContent = "Welcome to " + (userCity);
+                    return;
+                }
+            }
+            result.textContent = "City not found!";
+        }
+
+    </script>
+</body>
+
+</html>
+
+</html>
